@@ -8,6 +8,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from employees.models import Employee
 from .serializers import EmployeeSerializer
+from rest_framework.generics import GenericAPIView
+
+
 
 @api_view(['GET', 'POST'])
 def studentsView(request):
@@ -77,3 +80,5 @@ class EmployeesDetails(APIView):
         employee = self.get_object(pk)
         employee.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    
